@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'MainController@index');
+Route::get('/results', 'MainController@results');
+
+Route::get('/questions', 'MainController@getQuestions');
+
+Route::post('/responses', 'MainController@saveResponses');
+Route::get('/responses', 'MainController@getResponses');
