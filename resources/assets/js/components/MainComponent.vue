@@ -105,6 +105,8 @@
                 }).done(function(data){
 
                     console.log('Posted Successfully', data);
+
+                    window.location.href = "/results";
                 })
 
             }
