@@ -21,19 +21,19 @@ class CreateUserQuestionResponsesTable extends Migration
             $table->integer('answer_id', false, true);
             $table->timestamps();
 
-            $table->foreign('user_id')
+            $table->foreign('user_id', 'u_fk')
                 ->references('id')
                 ->on('users');
 
-            $table->foreign('question_id')
+            $table->foreign('question_id', 'qu_fk')
                 ->references('id')
                 ->on('questions');
 
-            $table->foreign('answer_id')
+            $table->foreign('answer_id', 'a_fk')
                 ->references('id')
                 ->on('question_answers');
 
-            $table->index('session');
+            $table->index('session', 'sesh_i');
         });
     }
 

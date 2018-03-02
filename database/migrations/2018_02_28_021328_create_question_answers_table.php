@@ -19,7 +19,7 @@ class CreateQuestionAnswersTable extends Migration
             $table->string('answer');
             $table->timestamps();
 
-            $table->foreign('question_id')
+            $table->foreign('question_id', 'q_fk')
                 ->references('id')
                 ->on('questions');
         });
